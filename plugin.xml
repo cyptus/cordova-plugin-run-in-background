@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-background-mode"
-        version="0.7.3">
+        version="0.8.0">
 
     <name>BackgroundMode</name>
 
@@ -94,6 +94,7 @@
             target-dir="src/de/appplant/cordova/plugin/background" />
 
         <framework src="com.android.support:support-compat:27.1.1" />
+		<dependency id="cordova-androidx-build" />
         <resource-file src="src/android/res/drawable/power.xml" target="res/drawable/power.xml" />
         <resource-file src="src/android/res/drawable-hdpi/power.png" target="res/drawable-hdpi/power.png" />
         <resource-file src="src/android/res/drawable-mdpi/power.png" target="res/drawable-mdpi/power.png" />

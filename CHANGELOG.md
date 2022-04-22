@@ -1,4 +1,9 @@
 ## ChangeLog
+
+#### Version 0.8.0
+- Set PendingIntent mutability (fixes #45)
+- Depend on cordova-androidx-build to automatically work with AndroidX
+
 #### Version 0.7.3 (not yet released)
 - Check if screen is off on Android
 - Wake-up device on Android
