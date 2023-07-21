@@ -136,7 +136,7 @@ public class BackgroundMode extends CordovaPlugin {
 
 			return validAction;
 		} catch (Exception e) {
-			callback.error("error:" + e.getMessage());
+			callback.error("error", e.getMessage());
 			return false;
         }
     }
@@ -152,7 +152,6 @@ public class BackgroundMode extends CordovaPlugin {
         try {
             inBackground = true;
             startService();
-		} catch(Exception e) {
         } finally {
             clearKeyguardFlags(cordova.getActivity());
         }
@@ -163,9 +162,7 @@ public class BackgroundMode extends CordovaPlugin {
      */
     @Override
     public void onStop () {
-		try {
-			clearKeyguardFlags(cordova.getActivity());
-		} catch(Exception e) {}
+        clearKeyguardFlags(cordova.getActivity());
     }
 
     /**
@@ -176,10 +173,8 @@ public class BackgroundMode extends CordovaPlugin {
     @Override
     public void onResume (boolean multitasking)
     {
-		try {
-			inBackground = false;
-			stopService();
-		} catch(Exception e) {}
+        inBackground = false;
+        stopService();
     }
 
     /**
@@ -188,10 +183,8 @@ public class BackgroundMode extends CordovaPlugin {
     @Override
     public void onDestroy()
     {
-		try {
-			stopService();
-			android.os.Process.killProcess(android.os.Process.myPid());
-		} catch(Exception e) {}
+        stopService();
+        android.os.Process.killProcess(android.os.Process.myPid());
     }
 
     /**
